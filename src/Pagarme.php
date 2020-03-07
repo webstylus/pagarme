@@ -65,13 +65,14 @@ class Pagarme
     }
 
     /**
+     * Connect to PagarMe Service
      * Pagarme constructor.
      */
     public function __construct()
     {
+        $this->transactionData = [];
         $this->setEnvironment(config('pagarme.environment'));
         $this->pagarme = new Client($this->environment);
-        $this->transactionData = [];
     }
 
     /**
@@ -163,8 +164,12 @@ class Pagarme
 
     public function getCustomerList()
     {
-        $customers = $this->pagarme->customers()->getList();
-        dd($customers);
+        try{
+            return $this->pagarme->customers()->getList();
+        } catch (PagarMeException $ex){
+            $this->error = $ex->getMessage();
+            return null;
+        }
     }
 
     /**
