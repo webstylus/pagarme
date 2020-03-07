@@ -1,0 +1,30 @@
+{
+    "name": "lojazone/pagarme",
+    "description": "Package to integration with Pagarme service using SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafael Pacífico",
+            "email": "rafael@webstylus.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "pagarme/pagarme-php": "^4.0",
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lojazone\\Pagarme\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lojazone\\Pagarme\\Providers\\PagarmeServiceProvider"
+            ]
+        }
+    }
+
+}
