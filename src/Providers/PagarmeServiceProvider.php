@@ -27,12 +27,11 @@ class PagarmeServiceProvider extends ServiceProvider
      * extend funcionality from others classes
      * register service providers
      * create singleton classes
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function register()
     {
-        $this->app->singleton(Pagarme::class, function (){
-           return new Pagarme();
+        $this->app->singleton(Pagarme::class, function () {
+            return new Pagarme();
         });
     }
 
