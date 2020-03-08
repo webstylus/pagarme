@@ -16,9 +16,12 @@ class PagarmeServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../views', 'pagarme');
+
+        /** Publish config file*/
         $this->publishes([
             __DIR__ . '/../config/pagarme.php' => config_path('pagarme.php')
-        ], 'lojazone-pagarme');
+        ], 'lojazone-pagarme-config');
+        /** Publish view files */
 
         $this->mergeConfigFrom(__DIR__ . '/../config/pagarme.php', 'pagarme');
     }

@@ -9,6 +9,7 @@
 ##### Intallation
 
         * composer required lojazone/pagarme
+        * php artisan vendor:publish --tag=lojazone-pagarme-config
         * Add your config/app.php `Lojazone\Pagarme\Providers\PagarmeServiceProvider::class`
         * Publish the config file and Define your keys, environment
         * or define keys in your .env file
