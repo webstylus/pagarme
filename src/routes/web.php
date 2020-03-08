@@ -1,9 +1,13 @@
 <?php
 
-Route::get('/test-pagarme', function () {
+use Illuminate\Support\Facades\Route;
 
-    $pagarme = new \Lojazone\Pagarme\Pagarme();
-    $pagarme->getCustomerList();
-    return view('pagarme::card');
+Route::group(['namespace' => 'Lojazone\Pagarme\Http\Controllers'], function () {
+
+    Route::prefix('pagarme')->group(function () {
+
+        Route::get('/', 'PagarmeController@index')->name('pagarme.index');
+
+    });
 
 });
