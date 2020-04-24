@@ -2,8 +2,8 @@
 
 namespace Lojazone\Pagarme;
 
-use PagarMe\Client;
-use PagarMe\Exceptions\PagarMeException;
+use \PagarMe\Client;
+use \PagarMe\Exceptions\PagarMeException;
 
 class Pagarme
 {
